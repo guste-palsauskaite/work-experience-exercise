@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eurostar Timetable</title>
+    <!-- This links our CSS file so the page looks nice -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="site-header">
+      <!-- ============================================================
+           TODO EXERCISE 3: Replace this with the real Eurostar logo!
+           1. Ask a developer to point you to a static image URL for the logo
+           2. Right-click the image and choose "Copy image address"
+           3. Replace the src="PASTE_URL_HERE" below with your copied URL
+           4. Delete the <span> line above and uncomment the <img> below
+              (remove the  and  around it)
+           ============================================================ -->
+      <span class="logo">★ eurostar</span>
+      <!-- <img class="logo" src="PASTE_URL_HERE" alt="Eurostar logo" /> -->
+      <h1>London St Pancras — Departures</h1>
+    </header>
+
+    <main class="container">
+
+      <!-- Filter bar -->
+      <div class="filters">
+        <label for="destination-filter">Filter by destination:</label>
+        <select id="destination-filter">
+          <option value="">All destinations</option>
+          <option value="Paris">Paris</option>
+          <option value="Brussels">Brussels</option>
+          <option value="Amsterdam">Amsterdam</option>
+        </select>
+      </div>
+
+      <!-- The timetable table.
+           The rows are filled in automatically by app.js — no need to edit this. -->
+      <table class="timetable">
+        <thead>
+          <tr>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Duration</th>
+            <th>Destination</th>
+            <th>Platform</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="timetable-body">
+          <!-- Train rows are inserted here by JavaScript -->
+        </tbody>
+      </table>
+
+    </main>
+
+    <!-- This loads our JavaScript file which fetches the trains from the server -->
+    <script src="app.js"></script>
+  </body>
+</html>
