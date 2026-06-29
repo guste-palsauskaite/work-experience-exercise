@@ -28,4 +28,5 @@ Each ticket in this folder is one task for you to complete on the Eurostar Timet
 | [EURO-05](EURO-05.md) | Replace the logo placeholder | Frontend — HTML |
 | [EURO-06](EURO-06.md) | Update the page colour scheme | Frontend — CSS |
 | [EURO-07](EURO-07.md) | Style the train status badges | Frontend — CSS |
-| [EURO-08](EURO-08.md) | Make it your own | Frontend — HTML & CSS |
+| [EURO-08](EURO-08.md) | Show a departure summary | Frontend — JavaScript |
+| [EURO-09](EURO-09.md) | Make it your own | Frontend — HTML & CSS |

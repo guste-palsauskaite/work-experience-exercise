@@ -1,54 +1,85 @@
-# EURO-08 — Make it your own
+# EURO-08 — Show a departure summary
 
-**Area:** Frontend — HTML & CSS  
-**Files to edit:** `public/index.html`, `public/style.css`  
-**Difficulty:** Open-ended
+**Area:** Frontend — JavaScript  
+**Files to edit:** `public/index.html`, `public/app.js`  
+**Difficulty:** Intermediate
 
 ---
 
 ## Background
 
-You have built a working timetable. Now make it look like something you are proud of.
+Passengers glancing at the board want a quick overview before scanning the full
+timetable. We want to add a summary line above the table that shows how many trains
+are on time, delayed, or cancelled.
 
-There are no strict rules here — this is your chance to be creative. Real designers
-and developers regularly spend time improving the look and feel of a product beyond
-the minimum requirements. This is sometimes called **polish**.
+For example:
 
----
-
-## Some ideas to get you started
-
-You do not have to do all of these — pick what interests you, or come up with your own.
-
-**Layout & spacing**
-- Make the table rows taller or the text bigger so it is easier to read.
-- Add more space around the header or the filter bar.
-
-**Typography**
-- Import a different font from Google Fonts and apply it to the page.
-  (Search "Google Fonts" and look for instructions on how to use `@import` in CSS.)
-- Make the departure and arrival times stand out — bold, larger, or a different colour.
-
-**Look and feel**
-- Add a gradient background instead of a flat colour.
-  (Search "CSS gradient generator" for a tool that writes the code for you.)
-- Round the corners of the table, add a shadow, or give it a border.
-- Style the filter dropdown so it matches the rest of the page.
-
-**Extra features** (if you are feeling confident)
-- Add a "last updated" timestamp below the table that shows the current time.
-- Show the total number of trains at the top, e.g. "Showing 8 departures".
-- Highlight the row of the next train to depart (the one with the earliest departure time).
+> **8 trains** — 5 on time · 2 delayed · 1 cancelled
 
 ---
 
-## How to approach it
+## What to do
 
-There is no acceptance criteria and no right answer. 
+### Part 1 — Add a placeholder to the HTML
 
-A good way to work: open the real [Eurostar website](https://www.eurostar.com) in one
-tab and your timetable in another. Notice what they do with colour, spacing, and
-typography, and see if you can borrow any ideas.
+Open `public/index.html` and add the following line between the filter bar and the
+table (look for the `<!-- TODO: EURO-08 -->` comment):
 
-When you are happy with it, open a pull request as normal and show a developer what
-you made.
+```html
+<p id="summary"></p>
+```
+
+This creates an empty paragraph. Your JavaScript will fill it in.
+
+### Part 2 — Count the trains with a for loop
+
+Open `public/app.js` and find the `// TODO: EURO-08` comment inside `loadTrains`.
+
+Add a **for loop** that goes through every train and counts how many fall into each
+status. Then write the result into the `summary` element.
+
+Here is the skeleton — fill in the `???` parts:
+
+```js
+let onTime    = 0;
+let delayed   = 0;
+let cancelled = 0;
+
+for (let i = 0; i < trains.length; i++) {
+  const train = trains[i];
+
+  if (train.status === 'On Time') {
+    onTime = ???;       // increase onTime by 1
+  } else if (???) {
+    delayed = delayed + 1;
+  } else if (???) {
+    cancelled = cancelled + 1;
+  }
+}
+
+const summary = document.getElementById('summary');
+summary.textContent = `${trains.length} trains — ${onTime} on time · ${delayed} delayed · ${cancelled} cancelled`;
+```
+
+### How a for loop works
+
+```js
+for (let i = 0; i < trains.length; i++) {
+  // this block runs once for every train
+  // i starts at 0 and increases by 1 each time
+  // trains[i] gives you the train at position i
+}
+```
+
+- `let i = 0` — start counting from zero
+- `i < trains.length` — keep going while there are more trains
+- `i++` — move to the next train (short for `i = i + 1`)
+
+---
+
+## Acceptance criteria
+
+- [ ] A summary line appears above the timetable when the page loads.
+- [ ] The counts are correct (check a few manually against the table).
+- [ ] When a destination filter is applied, the summary updates to reflect the
+      filtered results — not the total number of trains.

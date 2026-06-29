@@ -27,6 +27,8 @@ async function loadTrains(destination) {
   // ".json()" reads the response as an array of train objects
   const trains = await response.json();
 
+  // TODO: EURO-08 — add your for loop here to count trains by status
+
   // Clear the table before we draw new rows
   tableBody.innerHTML = '';
 

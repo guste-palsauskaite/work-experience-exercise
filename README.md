@@ -11,23 +11,57 @@ software team.
 
 ## Before you start
 
-You will need two things installed on your laptop. Ask a developer if you are unsure
-whether these are already set up.
+You will need the following set up on your laptop. Work through each section in order
+and ask a developer if anything does not work.
 
-### 1. Node.js
+### 1. Create a GitHub account
+
+GitHub is a website that developers use to store, share, and collaborate on code.
+You will use it to get your own copy of this project and to submit your work.
+
+1. Go to [github.com](https://github.com) and click **Sign up**.
+2. Follow the steps to create a free account. Use a personal email address.
+3. Verify your email when prompted.
+
+Keep your username and password somewhere safe — you will need them throughout the week.
+
+### 2. Install Git
+
+Git is a tool that tracks changes to your code over time. GitHub is built on top of it.
+
+Check if Git is already installed by opening a terminal and running:
+
+```
+git --version
+```
+
+If you see a version number (e.g. `git version 2.43.0`) you are good to go.
+
+If not:
+- **Mac:** run `xcode-select --install` in the terminal and follow the prompts.
+- **Windows:** download and install Git from [git-scm.com](https://git-scm.com/downloads). Leave all options as their defaults.
+
+After installing, tell Git your name and email (use the same email as your GitHub account):
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+### 3. Install Node.js
 
 Node.js lets your computer run JavaScript code outside of a browser (i.e. on the server).
 
-Check if it is already installed by opening a terminal and running:
+Check if it is already installed:
 
 ```
 node --version
 ```
 
-If you see a version number (e.g. `v20.11.0`) you are good to go. If not, ask a
-developer to install it for you.
+If you see a version number (e.g. `v20.11.0`) you are good to go. If not, download
+and install the **LTS** version from [nodejs.org](https://nodejs.org).
 
-### 2. A code editor
+### 4. Install a code editor
 
 We recommend **Visual Studio Code** (VS Code). Ask a developer if you need it installed.
 
@@ -136,7 +170,8 @@ All your tasks are in the **[tickets/](tickets/)** folder. Start with
 | [EURO-05](tickets/EURO-05.md) | Replace the logo placeholder |
 | [EURO-06](tickets/EURO-06.md) | Update the page colour scheme |
 | [EURO-07](tickets/EURO-07.md) | Style the train status badges |
-| [EURO-08](tickets/EURO-08.md) | Make it your own |
+| [EURO-08](tickets/EURO-08.md) | Show a departure summary |
+| [EURO-09](tickets/EURO-09.md) | Make it your own |
 
 ---
 
@@ -153,7 +188,7 @@ You will do the same here: **one pull request per ticket**.
 A **branch** is your own separate workspace. It keeps your changes isolated until they
 are reviewed.
 
-Before starting each ticket, create a new branch named after the ticket:
+Before starting each ticket, create a new branch named after it:
 
 ```
 git checkout -b EURO-01
@@ -194,14 +229,14 @@ git push origin EURO-01
 Let a developer know your PR is ready. They will leave comments or approve it.
 
 - If they leave comments, make the requested changes, commit them to the same branch,
-  and push again — the PR will update automatically.
+  and push again — the PR updates automatically.
 - Once approved, a developer will merge it in.
 
-Then move on to the next ticket and repeat from Step 1.
+Then start the next ticket from Step 1, on a fresh branch.
 
 ---
 
-## Useful terminal commands
+## Useful commands
 
 | Command | What it does |
 |---------|--------------|
